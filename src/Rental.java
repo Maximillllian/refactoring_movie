@@ -1,3 +1,6 @@
+import movie.Movie;
+
+
 class Rental {
     private Movie _movie;
     private int _daysRented;
@@ -13,5 +16,9 @@ class Rental {
 
     public Movie getMovie() {
         return _movie;
+    }
+
+    public double calculateAmount() {
+        return this.getMovie().calculatePrice(this.getDaysRented());
     }
 }
