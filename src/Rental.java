@@ -18,7 +18,15 @@ class Rental {
         return _movie;
     }
 
-    public double calculateAmount() {
-        return this.getMovie().calculatePrice(this.getDaysRented());
+    public double calculateCost() {
+        Movie movie = this.getMovie();
+        double cost = movie.getBaseCost();
+
+        if (this.getDaysRented() <= movie.getDaysBeforeFine()) {
+            return cost;
+        }
+
+        int fineDays = this.getDaysRented() - movie.getDaysBeforeFine();
+        return cost + (fineDays * movie.getFineCost());
     }
 }

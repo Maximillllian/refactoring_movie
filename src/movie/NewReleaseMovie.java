@@ -3,10 +3,9 @@ package movie;
 public class NewReleaseMovie extends Movie {
     public NewReleaseMovie(String title) {
         super(title);
-    }
-
-    public double calculatePrice(int daysRented) {
-        return daysRented * 3;
+        this._baseCost = 0;
+        this._fineCost = 3;
+        this._daysBeforeFine = 0;
     }
 
     @Override
